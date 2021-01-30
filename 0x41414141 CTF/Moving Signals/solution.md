@@ -20,7 +20,7 @@ The given file is a 64-bit executable that is statically linked and that is not 
 ## Exploit Overview 
 
 Following the challenge's description `Moving Signals` we conclude that the challenge can be exploited via `srop` technique.This technique 
-can work under the following conditions.
+can work under the following conditions. Read more [here](https://amriunix.com/post/sigreturn-oriented-programming-srop/)
   > Buffer overflow to overwrite the stack return address
   
   >`syscall` and `rax` gadgets that can be used to call sigreturn syscall.
