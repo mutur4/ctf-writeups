@@ -19,11 +19,11 @@ only protection enabled in the binary.
 
 # Exploitation Overview 
 
-Therefore to exploit this challenge you had to pass the `PoW` level first. Using python `itertools`, `hashlib` and `strings` module I used to 
+Therefore to exploit this challenge you had to pass the `PoW` level first. Using python `itertools`, `hashlib` and `string` module I used to 
 permutate all lowercase letters in groups of 4 hashed them into md5 and looped though to check which string's hash matches the given hash.
 
 The other challenge is we had to rop and get a shell. There was a `gets` function that was used to get input therefore this was definately a 
-`bof` bug. I used this to leak the address of `libc` and then popped a shell calling `system` with `bin/sh` and the argument.
+`bof` bug. I used this to leak the address of `libc` and then popped a shell calling `system` with `bin/sh` as the argument.
 
 The final exploit @ [exploit.py](exploit.py)
 # Flag 
