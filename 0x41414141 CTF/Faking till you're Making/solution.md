@@ -22,3 +22,21 @@ using `gdb` we can see that the memory that is being passed to `free` is a memor
 
 This is a block of memory that we control.The first call to `read` gets our input from the command line to this `address+16` on the stack.
 Using this information we need to find a way to overwrite the `ret` address with the leaked address of `sh`.
+
+> To control `rip` we need to do the following
+
+1. Create our fake fastbin chunk (make sure it is the same size as the second request 
+by malloc) and `free` will therefore add the fastchunk in the fastbin.
+2. The second call to `malloc` requests `0x30` which is a fastchunk and this will be pulled out from the fastbin now the fake chunk we 
+created.
+3. `fgets` into the new allocated chunk leads to a `heap overflow` since the chunk is a memory block from the stack we can overflow 
+and overwrite the saved return pointer with the adddress of `sh()` and get a shell :)
+
+The final exploit is @ [exploit.py](exploit.py)
+
+## flag
+
+flag{seems_h0us3_0f_sp1r1ts_w0rks_0n_2.32_then_58493}
+
+
+
