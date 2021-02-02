@@ -4,7 +4,7 @@
 ### Challenge Overview
 
 There was yet another `PoW` file that required a 4 letter lowercase word whose hash was in sha256.
-This was a `vuln` file that was a 64-bit elf executable, dynamically linked and not stripped. There is no `canary` enabled.
+There was a `vuln` file that was a 64-bit elf executable, dynamically linked and not stripped. There is no `canary` enabled.
 
 ### Exploit Overview
 
