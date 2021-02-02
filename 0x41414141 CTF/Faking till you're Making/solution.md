@@ -17,7 +17,7 @@ and it triggered a `free(): invalid pointer` error.
 Checking the address that is leaked this is the address of a function `sh` that calls system and binsh giving us a shell.We 
 need to find a way to control rip and call this function.
 
-The `invalid pointer` error is thrown when we try to `free` a chunk of memory that was not prevously allocated by malloc. Analysing the binary 
+The `invalid pointer` error is thrown when we try to `free` a chunk of memory that was not previously allocated by malloc. Analysing the binary 
 using `gdb` we can see that the memory that is being passed to `free` is a memory address from the stack. 
 
 This is a block of memory that we control.The first call to `read` gets our input from the command line to this `address+16` on the stack.
