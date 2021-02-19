@@ -12,8 +12,10 @@ def main():
         flag_ = [claripy.BVS(f"flag_{i}", 8) for i in range(23)] #create a flag bitvector symbol
         flag = claripy.Concat( *flag_) #unpack the flag list
         
+      
         state = p.factory.blank_state(addr=start_address) 
-        state.regs.rdx = 0x17
+        # One cool feature of angr is that we can use a state to control values in memory and in registers
+        state.regs.rdx = 0x17 # the len() of out input was stored in rdx()
         state.regs.rcx = 0xc4200163a0 # remember out input was stored in rcx 
         state.memory.store(0xc4200163a0, flag)
         
