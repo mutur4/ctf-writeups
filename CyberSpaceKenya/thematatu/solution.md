@@ -51,7 +51,6 @@ the math for us.
 
 *Solution*
 
-- Using all the details above we can now write a simple script to do the math. We will be using python and `angr` framework more can be read [here](https://angr.io)
-this is an amazing tool that is used in reversing. 
-- The final exploit [exploit.py](exploit.py)
+- Using all the details above we can now write a simple script to do the math. We will be using python and `angr` framework more can be read [here](https://angr.io) this is an amazing tool that is used in reversing. 
+- The final exploit [exploit.py](asd.py)
 
