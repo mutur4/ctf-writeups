@@ -21,10 +21,10 @@ is statically linked.
 
 *Dynamic Analysis*
 
-- Running the binary, we get a message `welcome to darkcon` and the next line prompts use
-for our name and the program exits.
+- Running the binary, we get a message `welcome to darkcon` and the next line prompts user
+for their name and the program exits.
 - Fuzzing the binary and providing a long string, gives us a segmentation fault therefore 
-this means we have a buffer overflow vulnerability. This is because out input was passed in 
+this means we have a buffer overflow vulnerability. This is because our input was passed in 
 via `get()` function.
 
 ### Exploitation
