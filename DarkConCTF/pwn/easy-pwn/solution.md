@@ -17,7 +17,7 @@ is statically linked therefore no `got's` and `not stripped` therefore we can ea
 address of symbols in the binary.
 - Using `rabin2 -i` to check the imports there is no information this is because the binary 
 is statically linked.
-- `checksec` all protections were enabled apart from `pie` therefore this me
+- `checksec` all protections were enabled apart from `pie` 
 
 *Dynamic Analysis*
 
