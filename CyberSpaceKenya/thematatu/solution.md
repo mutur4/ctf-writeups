@@ -37,8 +37,7 @@ maxopsz  16
 
 - Fire up your favorite debugger and load the binary. I used `gdb` `r2`. Since this is a binary written in `go` and is not stripped lets check the 
 entry point that is `main.main()` function.
-- We can see the binary takes out input at the address `0x0048e869` and this is where `Scan` is called the pointer to out input is then loaded into 
-the register `rcx` and an check is done to first check is the len of our input is less that or equal to `0x2`
+- We can see the binary takes out input at the address `0x0048e869` and this is where `Scan` is called to get out input. The pointer to out input is then loaded into the register `rcx` and a check is done to first check is the len of our input is less that or equal to `0x2`
 - If the len is greater that `0x2` the execution continues else a function is called that throws an error and loops back to get our input.
 - It then checks our input for various lengths and on conclusion we see that the input we provide should not be less that or equal to`0x16` bytes
 that is 22 in decimal.
