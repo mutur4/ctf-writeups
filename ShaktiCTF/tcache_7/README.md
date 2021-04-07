@@ -45,7 +45,7 @@ the type of file and the different file protections there is.
 
 *Leak Address*
 
-- Using the `Double Free Bug` we can tcache dup into the `ptr`.
+- Using the `Double Free Bug` we can tcache dup into bss at `ptr`.
 - When a chunk is deleted 2 times therefore the tcache will be a follows [chunk1---->chunk1]
 - Therefore this means that we can control the fd pointer to point to the address of `ptr` in memory.
 - When we then allocate a chunk we will therefore end up with `ptr` as a chunk and write into it the value of `elf.got.setbuf`
