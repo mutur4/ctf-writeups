@@ -2,7 +2,7 @@
 
 *Static Analysis*
 
-- This is was a 64-elg binary file that was dynamically linked and not stripped.
+- This is was a 64-bit elf binary file that was dynamically linked and not stripped.
 - The file had every other protection enabled apart from `pie`.
 - Looking at the string something intresting was the `./flag.txt` strings. Therefore this meant that the binary has a function that reads the flag.
 - Therefore a `ret2win` binary challenge
