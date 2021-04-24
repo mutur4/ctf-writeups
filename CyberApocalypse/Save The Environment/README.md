@@ -30,7 +30,7 @@
  but on your system it might be diffrent.
  - The return address of `main - 48` will give us the return address of `plant` function and therefore we can overwrite this 
  region using the `write anywhere` leverage given to us in the `plant` function.
- - The final exploit is @ [solution](exploit.py)
+ - The final exploit is @ [solution](asd.py)
 
 
  `
