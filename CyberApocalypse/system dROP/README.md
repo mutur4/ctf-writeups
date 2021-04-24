@@ -13,7 +13,7 @@ that was used to get our input.
 ### Exploitation
 
 - There is a buffer overflow at offset `40` we can control our return pointer.
-- This was not the intended way of exploitation but I exploited the challenges a follow
+- This was not the intended way of exploitation but the exploitation was as follows
 
       * Leak the address of libc using `write syscall` since we can control the value of 
         `rax` using read.
