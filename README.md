@@ -1,6 +1,5 @@
 # CTF-WRITEUPS-2021
 
-:pushpin: > This is a repo where we are going to explore all the solvable challenges in 2021 CTFs.
-
-**enjoy :smile:**
+> This a repo of some of the 2021 Solvable CTF challenges.
+> **Happy Learning :smile: **
 
