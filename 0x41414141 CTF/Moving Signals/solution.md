@@ -45,6 +45,6 @@ Does this Binary meet all these conditions?
  
  ## Flag 
  The flag after spawning a shell was:
- `flag{s1gROPp1ty_r0p_321321}`
+ `flag{s1gROPp1ty_r0p_321321}` :smile:
 
   
