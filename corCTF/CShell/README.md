@@ -76,7 +76,7 @@ a chunk we want to allocate + 8. We will allocate (120) as the size and the heap
 to us a chunk of the same size from the tcache that is `eric_buff` and so 
 using our heap overflow vuln we can overflow into `root`and write into the `root->password`
 with our desired hashed password.
-- When we now `logout()` and provide the username as `root` and password as `out_unhashed_password`
+- When we now `logout()` and provide the username as `root` and password as `our_unhashed_password`
 this will bypass the check `strcmp(hash, ptr -> ptr >password)`.
 - Checking `whoami` we are not root and can now spawn a shell =).
 - The exploit python code is @ [exploit file](asd.py).
