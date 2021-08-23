@@ -78,7 +78,7 @@ using our heap overflow vuln we can overflow into `root`and write into the `root
 with our desired hashed password.
 - When we now `logout()` and provide the username as `root` and password as `our_unhashed_password`
 this will bypass the check `strcmp(hash, ptr -> ptr >password)`.
-- Checking `whoami` we are not root and can now spawn a shell =).
+- Checking `whoami` we are now root and can now spawn a shell =).
 - The exploit python code is @ [exploit file](asd.py).
 
 
