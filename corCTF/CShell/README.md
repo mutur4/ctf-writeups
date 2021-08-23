@@ -53,23 +53,23 @@ and `root -> name` buffers.
 - The structure of the heap will be as follows.
  
 	```
-	+--------------------------------+
+	+-------------------------------+
 	| 	Address of root_t	 |
-	+--------------------------------+
+	+-------------------------------+
 	|	Address of user_t        |
-	+--------------------------------+
+	+-------------------------------+
 	| 	alex_buff		 |
-	+--------------------------------+
+	+-------------------------------+
 	|	charlie_buff 	         |  ----> This is a freed fastbin chunk (Inside the Tcache)
-	+--------------------------------+	
+	+-------------------------------+	
 	|	johnyy buff		 |
-	+--------------------------------+
+	+-------------------------------+
 	|	eric_buff		 |  -----> This is a freed SmallBinChunk (Inside the Tcache)
-	+--------------------------------+
+	+-------------------------------+
 	|	user			 |
-	+--------------------------------+
+	+-------------------------------+
 	| 	root 			 |
-	-+-------------------------------+
+	+-------------------------------+
 	```
 - Therefore using the power that we have been given. The power to supply the size of
 a chunk we want to allocate + 8. We will allocate (120) as the size and `malloc()` will return 
