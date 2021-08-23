@@ -16,8 +16,8 @@ understand the workflow of the challenge and find a way to exploit it.
 
 2. There are 2 objects that are freed() from the heap and they are of the 
 following sizes:
-	* Eric_buff : 0x80 (0x90) --> This is a smallbin chunk.
-	* Charlie_buff : 0x50 (0x60) --> This is a fastbin chunk.
+	* `Eric_buff` : 0x80 (0x90) --> **This is a smallbin chunk.**
+	* `Charlie_buff` : 0x50 (0x60) --> **This is a fastbin chunk.**
 - Both of these chunks fill up the tcache but in different indexes. Since they 
 are of different sizes.
 
@@ -27,8 +27,8 @@ way.
 	* `user = malloc(sizeof(struct users)*4)`
 	* `root = user + 1`
 
-4. There follows a couple of str copies. They copy strings into the user -> name
-and root -> name buffers.
+4. There follows a couple of str copies. They copy strings into the `user -> name`
+and `root -> name` buffers.
 
 5. The setup() function is called that allows us to do the following:
 	1. Enter the username and password.
