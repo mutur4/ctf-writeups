@@ -31,8 +31,8 @@ way.
 and `root -> name` buffers.
 
 5. The setup() function is called that allows us to do the following:
-	1. Enter the username and password.
-	2. Specify our own size to `malloc()` and input into this buffer
+	* Enter the username and password.
+	* Specify our own size to `malloc()` and input into this buffer
 	is limited to 201 bytes. __Therefore this can be a possible heap 
 	overflow when we allocate a chunk of size < 200 bytes :smile:__
 	
@@ -60,11 +60,11 @@ and `root -> name` buffers.
 	---------------------------------+
 	+ 	alex_buff		 +
 	---------------------------------+
-	+	charlie_buff 	         + ----> This is a freed fastbin chunk (Inside the Tcache)
+	+	charlie_buff 	         +  ----> This is a freed fastbin chunk (Inside the Tcache)
 	---------------------------------+	
 	+	johnyy buff		 +
 	---------------------------------+
-	+	eric_buff		 + -----> This is a freed SmallBinChunk (Inside the Tcache)
+	+	eric_buff		 +  -----> This is a freed SmallBinChunk (Inside the Tcache)
 	---------------------------------+
 	+	user			 +
 	+--------------------------------+
@@ -72,7 +72,7 @@ and `root -> name` buffers.
 	---------------------------------+
 	```
 - Therefore using the power that we have been given. The power to supply the size of
-a chunk we want to allocate + 8. We will allocate (120) as the size and the heap will return 
+a chunk we want to allocate + 8. We will allocate (120) as the size and `malloc()` will return 
 to us a chunk of the same size from the tcache that is `eric_buff` and so 
 using our heap overflow vuln we can overflow into `root`and write into the `root->password`
 with our desired hashed password.
