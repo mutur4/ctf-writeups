@@ -1,5 +1,4 @@
-#### CTF-WRITEUPS-2021
+#### CTF Writeups
 
-> This a repo of some of the 2021 Solvable CTF challenges.
-> __Happy Learning && Reading  :smile:__
+- These includes some of the previous solve CTF challenges and these brief writeups and descriptions.
 
