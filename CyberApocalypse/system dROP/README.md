@@ -1,5 +1,5 @@
 
-## System DROP
+### System DROP
 
 *static Analysis*
 - This was a 64-bit elf binary that was not stripped and that was dynamically linked.
@@ -10,7 +10,7 @@
 - There were 2 functions `_syscall` that gave us a `syscall` gadget and `main` function
 that was used to get our input.
 
-### Exploitation
+#### Exploitation
 
 - There is a buffer overflow at offset `40` we can control our return pointer.
 - This was not the intended way of exploitation but the exploitation was as follows
