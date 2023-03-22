@@ -1,4 +1,4 @@
 #### CTF Writeups
 
-- These includes some of the previous solve CTF challenges and these brief writeups and descriptions.
+- These include some different writeups/solve scripts for different CTFs majorly in ReverseEngineering and BinaryExploitation. 
 
